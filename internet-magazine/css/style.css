@@ -1,0 +1,480 @@
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTBook.woff2') format('woff2'),
+        url('../fonts/FuturaPTBook.woff') format('woff');
+        font-display: swap;
+        font-weight: 400;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPTMedium.woff2') format('woff2'),
+        url('../fonts/FuturaPTMedium.woff') format('woff');
+        font-display: swap;
+        font-weight: 500;
+        font-style: normal;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+:root {
+   --dark-color: rgb(1, 7, 26);
+    --accent-color: rgba(4, 114, 187, 0.966);
+}
+
+body {
+    overflow-anchor: none;
+    margin: 0;
+    font-family: "Futura PT", sans-serif;
+    font-weight: 400;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    word-wrap:break-word;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.blog-title{
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    color: rgb(71, 129, 255);
+}
+
+/* === header === */
+
+.header {
+    position: relative;
+    padding: 6px ;
+    padding-top: 4px;
+    background-color: #fff;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-self: space-between;  
+}
+
+.header__logo{
+    transform: translateY(1px);
+}
+
+.header__right {
+    display: flex;
+    align-items: center; 
+    margin-left: auto;
+}
+
+.header__nav {
+    margin-right: 20px;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+}
+
+.nav__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav__link {
+    position: relative;
+    font-size: 18px;
+    color: var(--dark-color);
+}
+
+.nav__link--current {
+    color: var(--accent-color);
+}
+
+.nav__link--current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.mail {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.banner {
+    height: 300px;
+    background-image: url("../img/IoT1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+   padding-top: 40px;
+   padding-bottom: 110px;
+}
+
+.content__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.posts {
+    grid-column: 3 span;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 180px);
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.post-grid__item:nth-child(5n +1) {
+    grid-column: 2 span;
+    grid-row: 2 span;
+}
+
+.post-grid__item:nth-child(5n+2) {
+    grid-row: 2 span;
+}
+
+.post-grid__item:nth-child(5n+3) {
+    grid-row: 2 span;
+}
+
+.post-grid__item:nth-child(5n+4) {
+    grid-column: 2 span;
+}
+
+.post-grid__item:nth-child(5n+5) {
+    grid-column: 2 span;
+}
+
+.blog-post {
+    position: relative;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    background: #cbdcfd;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:  center;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+   
+}
+
+.blog-post__category{  
+    position: relative;
+    z-index: 5;
+    margin-bottom: 6px;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 1px 10px;
+    font-size: 16px;
+    line-height: 21px;
+    color: rgb(0, 0, 0);
+    background: rgb(95, 204, 204);
+  
+}
+
+.blog-post__title {
+    margin-bottom: 10px;  
+}
+
+.blog-post__link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.blog-post__descr {
+    margin: 0;
+    padding-right: 40px;
+    font-size: 18px;
+    line-height: 23px;
+    color: black;
+}
+
+.blog-post__date {
+    position:absolute;
+    right: 30px;
+    top: 40px;
+    font-size: 16px;
+    line-height: 21px;
+    color: rgb(77, 92, 119);
+}
+
+.blog-post--main {
+    height: 280px;
+    margin-bottom: 40px;
+}
+
+.post-grid__item:nth-child(5n+2) .blog-post__date {
+    top: auto;
+    right: auto;
+    bottom: 30px;
+}
+
+.post-grid__item:nth-child(5n+3) .blog-post__date {
+    top: auto;
+    right: auto;
+    bottom: 30px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination__item:not(:last-child){
+    margin-right: 20px;
+}
+
+.pagination__link {
+    position: relative;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000;
+}
+
+.pagination__link--current {
+    color: var(--accent-color);
+}
+.pagination__link--current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.popular-posts__title {
+    margin-bottom: 20px;
+}
+
+.popular-post__article {
+    padding: 0;
+    background: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border-bottom: 2px solid #8d8888;
+}
+
+.popular-post__article .blog-post__title {
+    font-weight:  400;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.popular-post__article .blog-post__date {
+    font-size: 18px;
+    line-height: 23px;
+    position: initial;
+}
+
+.popular-posts__item:last-child .popular-post__article {
+    border-bottom: 2px solid transparent;
+}
+
+.popular-posts{
+    margin-bottom: 50px;
+}
+
+.subscribe{
+    padding: 30px 0;
+    border-radius: 20px;
+    background: white;
+}
+
+.subscribe__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sub-form {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.sub-form__input {
+    width: 100%;
+    border-radius: 20px;
+    background: rgb(187, 196, 195);
+    padding-left: 30px;
+    height: 50px;
+    font-family: 'Futura PT', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: rgb(100, 13, 13);
+    border: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.sub-form__btn {
+    width: 100%;
+    border-radius: 20px;
+    height: 50px;
+    background-color:var(--accent-color);
+    font-family: 'Futura PT', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #f1f2f8;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__nav {
+margin-bottom: 30px;
+}
+
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer__nav .nav__item:not(:last-child) {
+    margin-right: 60px;
+}
+
+.footer__copy {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+}
+
+.blog-post:hover {
+    background: #fff;
+    box-shadow: 4px 8px 40px rgba(0, 0, 0, 0.432);
+}
+
+.header-search {
+    
+    position: absolute;
+    top: calc(100% + 80px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    padding: 5px 5px;
+}
+
+.header-search__close{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -20px;
+    right: -20px;
+}
+
+.header-search__close img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-search__form {
+    display: flex;
+    align-items: center;
+}
+
+.header-search__input{
+    width: 100%;
+    border-radius: 20px;
+    background: rgb(187, 196, 195);
+    padding-left: 30px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    border: none;
+    display: block;
+    margin-bottom: 0;
+}
+
+.header-search__btn{
+    width: 30%;
+    border-radius: 20px;
+    height: 50px;
+    background-color:var(--accent-color);
+    font-family: 'Futura PT', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
